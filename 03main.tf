@@ -29,5 +29,5 @@ module "eks" {
   region          = var.region
   tags            = var.tags
 
-  #depends_on = [module.vpc, module.ec2]
+  depends_on = [module.vpc, module.ec2]
 }

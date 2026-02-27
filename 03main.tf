@@ -19,15 +19,15 @@ module "ec2" {
   depends_on = [module.vpc]
 }
 
-# module "eks" {
-#   source          = "./modules/EKS"
-#   cluster_name    = var.cluster_name
-#   cluster_version = var.cluster_version
-#   eks_addons      = var.eks_addons
-#   project_name    = var.project_name
-#   environment     = var.environment
-#   region          = var.region
-#   tags            = var.tags
+module "eks" {
+  source          = "./modules/EKS"
+  cluster_name    = var.cluster_name
+  cluster_version = var.cluster_version
+  eks_addons      = var.eks_addons
+  project_name    = var.project_name
+  environment     = var.environment
+  region          = var.region
+  tags            = var.tags
 
-#   #depends_on = [module.vpc, module.ec2]
-# }
+  #depends_on = [module.vpc, module.ec2]
+}

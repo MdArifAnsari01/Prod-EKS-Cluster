@@ -11,13 +11,13 @@ module "vpc" {
   cluster_name         = var.cluster_name
 }
 
-# module "ec2" {
-#   source       = "./modules/EC2"
-#   project_name = var.project_name
-#   environment  = var.environment
+module "ec2" {
+  source       = "./modules/EC2"
+  project_name = var.project_name
+  environment  = var.environment
 
-#   depends_on = [module.vpc]
-# }
+  depends_on = [module.vpc]
+}
 
 # module "eks" {
 #   source          = "./modules/EKS"
